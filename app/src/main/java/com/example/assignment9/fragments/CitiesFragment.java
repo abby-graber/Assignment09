@@ -1,6 +1,9 @@
 package com.example.assignment9.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,22 +11,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.example.assignment9.CitiesAdapter;
 import com.example.assignment9.DataService;
 import com.example.assignment9.R;
 
 public class CitiesFragment extends Fragment {
 
+    public static final String CITY_KEY = "city";
+
     private RecyclerView recyclerView;
     private CitiesAdapter adapter;
 
     public CitiesFragment() {
-        // Required empty constructor
+        // Required empty public constructor
     }
 
     @Override
@@ -45,40 +45,31 @@ public class CitiesFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView =
-                view.findViewById(R.id.recyclerViewCities);
+        recyclerView = view.findViewById(R.id.recyclerViewCities);
 
         recyclerView.setLayoutManager(
-                new LinearLayoutManager(getContext()));
+                new LinearLayoutManager(requireContext()));
 
         adapter = new CitiesAdapter(
                 DataService.cities,
                 city -> {
 
-                    Toast.makeText(
-                            getContext(),
-                            city.getCity(),
-                            Toast.LENGTH_SHORT
-                    ).show();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable(CITY_KEY, city);
 
-                    /*
-                     Part 2 Navigation
+                    CurrentWeatherFragment fragment =
+                            new CurrentWeatherFragment();
 
-                     Bundle bundle = new Bundle();
-                     bundle.putSerializable("city", city);
+                    fragment.setArguments(bundle);
 
-                     CurrentWeatherFragment fragment =
-                             new CurrentWeatherFragment();
-
-                     fragment.setArguments(bundle);
-
-                     requireActivity()
-                             .getSupportFragmentManager()
-                             .beginTransaction()
-                             .replace(R.id.fragmentContainerView, fragment)
-                             .addToBackStack(null)
-                             .commit();
-                     */
+                    requireActivity()
+                            .getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(
+                                    R.id.fragmentContainer,
+                                    fragment)
+                            .addToBackStack(null)
+                            .commit();
                 });
 
         recyclerView.setAdapter(adapter);

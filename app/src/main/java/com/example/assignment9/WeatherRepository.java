@@ -4,6 +4,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.example.assignment9.models.Weather;
+
 public class WeatherRepository {
 
     private WeatherService service = ApiClient.getWeatherService();

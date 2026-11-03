@@ -34,6 +34,9 @@ public class CurrentWeatherFragment extends Fragment {
     private ProgressBar progressBar;
     private TextView tvError;
 
+    private Button buttonBack;
+    private Button buttonForecast;
+
     public CurrentWeatherFragment() {
         // Required empty constructor
     }
@@ -44,7 +47,8 @@ public class CurrentWeatherFragment extends Fragment {
 
         if (getArguments() != null) {
             city = (DataService.City)
-                    getArguments().getSerializable("city");
+                    getArguments().getSerializable(
+                            CitiesFragment.CITY_KEY);
         }
     }
 
@@ -58,8 +62,7 @@ public class CurrentWeatherFragment extends Fragment {
         return inflater.inflate(
                 R.layout.fragment_current_weather,
                 container,
-                false
-        );
+                false);
     }
 
     @Override
@@ -84,16 +87,30 @@ public class CurrentWeatherFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
         tvError = view.findViewById(R.id.tvError);
 
-        Button buttonBack = view.findViewById(R.id.buttonBack);
-        Button buttonForecast = view.findViewById(R.id.buttonForecast);
+        buttonBack = view.findViewById(R.id.buttonBack);
+        buttonForecast = view.findViewById(R.id.buttonForecast);
 
-        // Display selected city for testing
         if (city != null) {
+
             tvCityName.setText(
                     city.getCity() + ", " + city.getCountry()
             );
+
+            // Temporary placeholder values
+            // Replace with API data in Part 2
+
+            tvTemperature.setText("--");
+            tvTempMax.setText("--");
+            tvTempMin.setText("--");
+            tvDescription.setText("--");
+            tvHumidity.setText("--");
+            tvWindSpeed.setText("--");
+            tvWindDegree.setText("--");
+            tvCloudiness.setText("--");
+
         } else {
-            tvCityName.setText("No City Selected");
+
+            showError("City information not found.");
         }
 
         buttonBack.setOnClickListener(v ->
@@ -101,23 +118,31 @@ public class CurrentWeatherFragment extends Fragment {
                         .getSupportFragmentManager()
                         .popBackStack());
 
-        // Part 2:
-        // Use city.getLatitude() and city.getLongitude()
-        // to call OpenWeather API.
+        buttonForecast.setOnClickListener(v -> {
+
+            // Part 3
+            // Open ForecastFragment here
+
+        });
     }
 
     private void showLoading() {
+
         progressBar.setVisibility(View.VISIBLE);
         tvError.setVisibility(View.GONE);
     }
 
     private void hideLoading() {
+
         progressBar.setVisibility(View.GONE);
     }
 
     private void showError(String message) {
+
         progressBar.setVisibility(View.GONE);
+
         tvError.setText(message);
+
         tvError.setVisibility(View.VISIBLE);
     }
 }
