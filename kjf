@@ -1,0 +1,38 @@
+[33mcommit df415cf10669c97b386e097363122addcbe98c21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 833a91e ef7036d
+Author: abby-graber <agraber1@uncc.edu>
+Date:   Mon Nov 2 19:29:17 2026 -0500
+
+    part 1
+
+[33mcommit 833a91e7135f6f817ddade1a5d2e65aafb94069d[m
+Author: abby-graber <agraber1@uncc.edu>
+Date:   Mon Nov 2 19:26:35 2026 -0500
+
+    part 1
+
+[33mcommit ef7036dcd813ffccc88cb921f4a0739c76a52384[m
+Author: Bryan Carrera <bcarrera@charlotte.edu>
+Date:   Mon Nov 2 19:25:13 2026 -0500
+
+    Add Glide dependency to build.gradle.kts
+
+[33mcommit a99e5c2f79f180f289b418e4f25ab1ea64f1dab6[m
+Author: Bryan Carrera <bcarrera@charlotte.edu>
+Date:   Mon Nov 2 19:23:48 2026 -0500
+
+    Add files via upload
+
+[33mcommit 7ff19e86e42f1b101d1ccc7384179b67167e561a[m
+Author: Christian Patton <cpatto25@charlotte.edu>
+Date:   Mon Nov 2 19:04:40 2026 -0500
+
+    My part
+    
+    Weather API and data layer
+
+[33mcommit 9af4ad67ae34e8d1ba98ac9bbafcae9565398115[m
+Author: abby-graber <agraber1@uncc.edu>
+Date:   Mon Nov 2 18:27:49 2026 -0500
+
+    Init project
