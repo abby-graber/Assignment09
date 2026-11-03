@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Assignment9</string>
+    <string name="current_city">Current City</string>
+    <string name="temp">Temp</string>
+    <string name="temp_max">Temp Max</string>
+    <string name="temp_min">Temp Min</string>
+    <string name="desc">Desc</string>
+    <string name="humidity">#%</string>
+    <string name="wind_speed"># miles/hr</string>
+    <string name="wind_degree"># degrees</string>
+    <string name="cloud">cloud_value</string>
+    <string name="temperature_title">Temperature</string>
+    <string name="temp_max_title">Temperature Max</string>
+    <string name="temp_min_title">Temperature Min</string>
+    <string name="Desc_title">Description</string>
+    <string name="humidity_title">Humidity</string>
+    <string name="wind_speed_title">Wind Speed</string>
+    <string name="wind_degree_title">Wind Degree Title</string>
+    <string name="cloud_title">Cloudiness</string>
 </resources>
