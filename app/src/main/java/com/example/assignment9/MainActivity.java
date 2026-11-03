@@ -8,7 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+<<<<<<< HEAD
 import com.example.assignment9.fragments.CitiesFragment;
+=======
+import android.util.Log;
+import android.widget.Toast;
+>>>>>>> ef7036dcd813ffccc88cb921f4a0739c76a52384
 
 public class MainActivity extends AppCompatActivity {
 
